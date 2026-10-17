@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boulangerie Mousset — Artisan boulanger-pâtissier à Troyes</title>
+<title>Boulangerie Mousset : Artisan boulanger-pâtissier à Troyes</title>
 <meta name="description" content="Boulangerie Mousset, artisan boulanger-pâtissier à Troyes, Saint-André-les-Vergers, Barberey-Saint-Sulpice. Pain, viennoiseries, pâtisseries sur commande et pièces montées.">
 <style>
   :root{
@@ -132,6 +132,39 @@
     .order .row2{grid-template-columns:1fr}
     .hero .content{padding:36px 0 50px}
   }
+
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:85px}
+.hero{height:auto;min-height:610px;padding:0;background:#2d241c;color:#fff;display:block;isolation:isolate}
+.hero::after{background:linear-gradient(90deg,rgba(32,24,17,.98),rgba(39,28,18,.94) 47%,rgba(57,38,20,.28))}
+.hero-art{position:absolute;inset:0;overflow:hidden;background:radial-gradient(circle at 77% 45%,#b5834f,#70502f 29%,#2d241c 75%)}
+.hero-art .sun{position:absolute;right:10%;top:12%;width:400px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#deb47b,#c18d52 70%,transparent 71%);opacity:.65;filter:blur(3px)}
+.hero-art .loaf{position:absolute;background:linear-gradient(135deg,#efd19e,#c3843d 36%,#77401d 92%);border:9px solid rgba(100,54,20,.35);box-shadow:25px 35px 60px #24191099,inset -20px -16px 35px #5b321755}
+.hero-art .loaf-one{width:340px;height:225px;right:10%;top:37%;border-radius:50%;transform:rotate(-20deg)}
+.hero-art .loaf-two{width:245px;height:155px;right:-1%;top:57%;border-radius:50%;transform:rotate(25deg)}
+.hero .hero-inner{position:relative;z-index:2;min-height:610px;display:flex;align-items:center}
+.hero .content{padding:90px 0 95px;align-self:auto;max-width:710px}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;color:#e4c498}
+.hero h1{font-size:clamp(50px,6.5vw,88px);letter-spacing:-2px;line-height:1.03;margin:20px 0 24px}
+.hero h1 em{font-weight:400;color:#eac795}
+.hero p.lede{max-width:530px;font-size:clamp(16px,1.7vw,19px);line-height:1.7;color:#f2e5d4}
+.hero .actions .btn{padding:14px 22px}
+.badges .b .icon{color:var(--crust-dark)}
+.form-hint{font-size:12px;color:var(--soft);margin:0}
+@media(max-width:600px){
+header .container{height:68px}
+.logo .name{font-size:14px}.logo .name small{font-size:9px;letter-spacing:1px}
+header .btn{padding:10px 13px;font-size:12px}
+.hero,.hero .hero-inner{min-height:550px}
+.hero .content{padding:85px 0}
+.hero::after{background:linear-gradient(90deg,#21180ff0,#21180fba)}
+.hero-art .loaf-one{right:-15%;top:48%;opacity:.38}
+.hero-art .loaf-two{opacity:.25}
+.hero h1{font-size:clamp(47px,11vw,66px)}
+.hero .actions .btn{font-size:12px;padding:12px 15px}
+.store{grid-template-columns:1fr}
+.store .pic{width:56px;height:56px}
+}
 </style>
 </head>
 <body>
@@ -155,29 +188,21 @@
   </div>
 </header>
 
-<section class="hero">
-  <img src="images/hero-baguettes.jpg" alt="Baguettes artisanales tranchées">
-  <div class="container">
-    <div class="content">
-      <h1>Pain, viennoiseries<br>et pâtisseries d'artisan,<br>chaque jour à Troyes.</h1>
-      <p class="lede">Quatre boutiques, une même exigence : des produits faits maison avec amour, du lundi au dimanche.</p>
-      <div class="actions">
-        <a href="#boutiques" class="btn">Trouver une boutique</a>
-        <a href="#commande" class="btn ghost">Commander sur mesure</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="loaf loaf-one"></div><div class="loaf loaf-two"></div></div>
+<div class="container hero-inner"><div class="content">
+<span class="hero-eyebrow">BOULANGERIE ARTISANALE À TROYES</span>
+<h1 id="hero-title">Le goût des<br><em>bonnes choses.</em></h1>
+<p class="lede">Pains de caractère, viennoiseries dorées et pâtisseries préparées avec passion, chaque jour près de chez vous.</p>
+<div class="actions"><a href="#creations" class="btn">Nos créations</a><a href="#boutiques" class="btn ghost">Nos boutiques</a></div>
+</div></div></section>
 
-<div class="badges">
-  <div class="container">
-    <div class="row">
-      <div class="b"><div class="icon">⭐</div><div class="t">4,7/5 sur Google</div><div class="s">550 avis vérifiés</div></div>
-      <div class="b"><div class="icon">🛡️</div><div class="t">Très satisfaisant</div><div class="s">Contrôle sanitaire officiel</div></div>
-      <div class="b"><div class="icon">🥖</div><div class="t">100% fait maison</div><div class="s">Produits frais chaque jour</div></div>
-      <div class="b"><div class="icon">📍</div><div class="t">4 boutiques</div><div class="s">Troyes et alentours</div></div>
-    </div>
-  </div>
+<div class="badges"><div class="container"><div class="row">
+<div class="b"><div class="icon">✦</div><div class="t">Savoir-faire artisanal</div><div class="s">Le soin du geste</div></div>
+<div class="b"><div class="icon">♡</div><div class="t">À partager</div><div class="s">Pour toutes les occasions</div></div>
+<div class="b"><div class="icon">✳</div><div class="t">Douceurs gourmandes</div><div class="s">Du pain aux gâteaux</div></div>
+<div class="b"><div class="icon">⌖</div><div class="t">Quatre boutiques</div><div class="s">Dans le pays troyen</div></div>
+</div></div></div>
 </div>
 
 <section id="about" class="about">
@@ -203,7 +228,7 @@
   <div class="container">
     <span class="kicker">Créations</span>
     <h2>Du quotidien aux pièces sur mesure.</h2>
-    <p class="lede">Vos photos préférées, sur votre vitrine en ligne : du pain croustillant aux entremets miroir, chaque création est façonnée à la main.</p>
+    <p class="lede">Du pain croustillant aux entremets élégants, découvrez une sélection pour le quotidien et les grandes occasions.</p>
     <div class="grid">
       <div class="card">
         <img src="images/hero-baguettes.jpg" alt="Baguettes artisanales">
@@ -237,7 +262,7 @@
   <div class="container">
     <span class="kicker">Nos boutiques</span>
     <h2>Quatre boutiques près de chez vous.</h2>
-    <p class="lede">Horaires, adresses et itinéraires en un coup d'œil, mis à jour automatiquement par la boulangerie.</p>
+    <p class="lede">Retrouvez nos adresses et préparez votre visite. Pensez à confirmer les horaires auprès de la boutique.</p>
     <div class="grid">
       <div class="store">
         <div class="pic">B</div>
@@ -281,11 +306,11 @@
       <div class="side">
         <span class="kicker">Sur commande</span>
         <h2>Anticipez votre prochain événement.</h2>
-        <span class="pill">Réponse sous 24 h par la maison</span>
+        <span class="pill">Renseignements sur les commandes</span>
         <p>Mariages, anniversaires, baptêmes, commandes d'entreprise : précisez votre besoin, Mathieu ou Anne-Lise reviennent vers vous avec un devis et une proposition personnalisés.</p>
         <p style="margin-top:18px;color:var(--ink);font-weight:600">Quelques jours de délai recommandés pour les pièces montées.</p>
       </div>
-      <form onsubmit="event.preventDefault();alert('Merci, votre demande est transmise à la maison Mousset.')">
+      <form id="order-form">
         <label>Votre nom<input type="text" name="nom" placeholder="Marie Dupont" required></label>
         <div class="row2">
           <label>Téléphone<input type="tel" name="tel" placeholder="06 12 34 56 78" required></label>
@@ -308,7 +333,7 @@
         <label>Votre idée
           <textarea name="msg" rows="4" placeholder="Thème, couleurs, allergies, message à inscrire…"></textarea>
         </label>
-        <button type="submit">Envoyer ma demande</button>
+        <button type="submit">Préparer mon email</button><p class="form-hint">Le bouton ouvre votre messagerie avec un email prérempli. Aucun message n’est envoyé automatiquement.</p>
       </form>
     </div>
   </div>
@@ -318,7 +343,7 @@
   <div class="container">
     <span class="kicker" style="color:var(--gold)">Contact</span>
     <h2>On vous répond vite, et on vous reconnaît.</h2>
-    <p class="lede">Téléphone, email, WhatsApp ou Messenger — choisissez le canal qui vous convient, on lit tout.</p>
+    <p class="lede">Une question ou un projet gourmand ? Contactez la boulangerie pour en discuter.</p>
     <div class="grid">
       <div class="c"><h3>Téléphone · Saint-André</h3><p>03 25 82 35 18</p></div>
       <div class="c"><h3>WhatsApp</h3><p>06 32 18 46 24</p></div>
@@ -333,5 +358,12 @@
   </div>
 </footer>
 
-</body>
+<script>
+document.getElementById('order-form').addEventListener('submit', function(event) {
+event.preventDefault();
+const d=new FormData(this);
+const lines=['Bonjour, je souhaite me renseigner pour une commande.','','Nom : '+d.get('nom'),'Téléphone : '+d.get('tel'),'Email : '+d.get('email'),'Création : '+d.get('type'),'Date : '+d.get('date'),'Personnes : '+d.get('pers'),'Détails : '+d.get('msg')];
+location.href='mailto:boulangerie-mousset@orange.fr?subject='+encodeURIComponent('Demande de commande')+'&body='+encodeURIComponent(lines.join(String.fromCharCode(10)));
+});
+</script></body>
 </html>
