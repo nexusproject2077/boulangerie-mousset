@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boulangerie Mousset : Artisan boulanger-pâtissier à Troyes</title>
+<meta name="description" content="Boulangerie Mousset, artisan boulanger-pâtissier à Troyes, Saint-André-les-Vergers, Barberey-Saint-Sulpice. Pain, viennoiseries, pâtisseries sur commande et pièces montées.">
+<style>
+  :root{
+    --cream:#faf6ef;
+    --crust:#c08a52;
+    --crust-dark:#8a5a2b;
+    --gold:#c5a059;
+    --ink:#2b2118;
+    --soft:#6f5b46;
+    --line:#e8dcc7;
+    --accent:#b3251b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .container{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* HEADER */
+  header{position:sticky;top:0;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  header .container{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .logo .mark{width:44px;height:44px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:#fff;font-weight:700;font-family:"Georgia",serif;font-size:22px;letter-spacing:-1px}
+  .logo .name{font-weight:600;font-size:17px;letter-spacing:.2px}
+  .logo .name small{display:block;font-size:11px;color:var(--soft);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;font-size:14px;font-weight:500}
+  nav ul a{text-decoration:none;color:var(--soft)}
+  nav ul a:hover{color:var(--ink)}
+  .btn{display:inline-block;padding:12px 20px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.3px;border:1px solid var(--ink)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+  /* HERO */
+  .hero{position:relative;height:min(86vh,640px);min-height:480px;display:grid;grid-template-rows:1fr;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.55) 100%)}
+  .hero .content{position:relative;z-index:2;align-self:end;padding:60px 0 80px;color:#fff}
+  .hero h1{font-family:"Georgia",serif;font-weight:500;font-size:clamp(34px,5.5vw,64px);line-height:1.1;margin:0 0 14px;letter-spacing:-.5px}
+  .hero p.lede{font-size:clamp(16px,1.4vw,20px);max-width:560px;margin:0 0 28px;opacity:.92}
+  .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero .actions .btn{background:#fff;color:var(--ink);border-color:#fff}
+  .hero .actions .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+  .hero .actions .btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+  /* BADGES */
+  .badges{padding:38px 0;border-bottom:1px solid var(--line);background:#fff}
+  .badges .row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .badges .b .icon{font-size:24px;margin-bottom:6px}
+  .badges .b .t{font-weight:600;font-size:14px}
+  .badges .b .s{font-size:12px;color:var(--soft);margin-top:3px}
+
+  /* SECTIONS */
+  section{padding:88px 0}
+  section h2{font-family:"Georgia",serif;font-weight:500;font-size:clamp(28px,3.4vw,42px);margin:0 0 14px;letter-spacing:-.3px}
+  section .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  section p.lede{font-size:17px;color:var(--soft);max-width:680px;margin:0 0 38px}
+
+  /* ABOUT */
+  .about{background:var(--cream)}
+  .about .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+  .about img{border-radius:14px;box-shadow:0 30px 60px -30px rgba(43,33,24,.4)}
+  .about .checklist{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+  .about .checklist li{display:flex;gap:12px;font-size:15px;color:var(--soft)}
+  .about .checklist li::before{content:"✓";color:var(--gold);font-weight:700}
+
+  /* CREATIONS */
+  .creations{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .creations .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .card{background:var(--cream);border-radius:14px;overflow:hidden;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 24px 40px -28px rgba(43,33,24,.35)}
+  .card .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#e8dcc7,#c08a52);display:grid;place-items:center;color:#fff;font-family:"Georgia",serif;font-size:34px;letter-spacing:1px}
+  .card .ph.alt{background:radial-gradient(at 30% 30%,#d4a574,#6b3a0f)}
+  .card .ph.alt2{background:conic-gradient(from 45deg,#c5a059,#8a5a2b,#c5a059,#6b3a0f,#c5a059)}
+  .card img{aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
+  .card .body{padding:22px 24px 26px}
+  .card .body h3{margin:0 0 6px;font-size:19px;font-family:"Georgia",serif;font-weight:500}
+  .card .body p{margin:0;font-size:14px;color:var(--soft)}
+
+  /* STORES */
+  .stores{background:var(--cream)}
+  .stores .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .store{display:grid;grid-template-columns:84px 1fr;gap:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;align-items:start}
+  .store .pic{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#c08a52,#8a5a2b);color:#fff;display:grid;place-items:center;font-family:"Georgia",serif;font-size:30px}
+  .store h3{margin:0 0 8px;font-size:18px;font-family:"Georgia",serif;font-weight:500}
+  .store .meta{font-size:14px;color:var(--soft);line-height:1.6}
+  .store .meta strong{color:var(--ink);font-weight:600;display:block;margin-top:8px;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+  .store .links{margin-top:14px;display:flex;gap:14px;font-size:13px}
+  .store .links a{color:var(--gold);text-decoration:none;font-weight:600}
+  .store .links a:hover{color:var(--ink)}
+
+  /* ORDER */
+  .order{background:linear-gradient(180deg,#fff 0%,var(--cream) 100%);border-top:1px solid var(--line)}
+  .order .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .order form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:16px}
+  .order label{font-size:13px;font-weight:600;color:var(--ink);display:flex;flex-direction:column;gap:6px}
+  .order input,.order select,.order textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  .order input:focus,.order select:focus,.order textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(197,160,89,.18)}
+  .order .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .order button{justify-self:start;background:var(--ink);color:#fff;border:none;padding:14px 22px;border-radius:999px;font-weight:600;cursor:pointer;letter-spacing:.3px}
+  .order button:hover{background:var(--gold)}
+  .order .side{padding:14px 0}
+  .order .side h3{margin:0 0 8px;font-family:"Georgia",serif;font-weight:500;font-size:22px}
+  .order .side p{color:var(--soft)}
+  .order .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--soft);margin-bottom:14px}
+  .order .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+
+  /* CONTACT */
+  .contact{background:var(--ink);color:#fff}
+  .contact h2{color:#fff}
+  .contact p.lede{color:rgba(255,255,255,.7)}
+  .contact .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:20px}
+  .contact .c h3{margin:0 0 4px;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .contact .c p{margin:0;font-size:15px}
+
+  footer{padding:36px 0 60px;border-top:1px solid var(--line);font-size:13px;color:var(--soft);text-align:center;background:var(--cream)}
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    nav ul{display:none}
+    .about .grid,.order .grid{grid-template-columns:1fr;gap:36px}
+    .creations .grid,.stores .grid,.contact .grid,.badges .row{grid-template-columns:1fr 1fr}
+    section{padding:64px 0}
+  }
+  @media (max-width:560px){
+    .creations .grid,.stores .grid,.contact .grid,.badges .row{grid-template-columns:1fr}
+    .order .row2{grid-template-columns:1fr}
+    .hero .content{padding:36px 0 50px}
+  }
+
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:85px}
+.hero{height:auto;min-height:610px;padding:0;background:#2d241c;color:#fff;display:block;isolation:isolate}
+.hero::after{background:linear-gradient(90deg,rgba(32,24,17,.98),rgba(39,28,18,.94) 47%,rgba(57,38,20,.28))}
+.hero-art{position:absolute;inset:0;overflow:hidden;background:radial-gradient(circle at 77% 45%,#b5834f,#70502f 29%,#2d241c 75%)}
+.hero-art .sun{position:absolute;right:10%;top:12%;width:400px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#deb47b,#c18d52 70%,transparent 71%);opacity:.65;filter:blur(3px)}
+.hero-art .loaf{position:absolute;background:linear-gradient(135deg,#efd19e,#c3843d 36%,#77401d 92%);border:9px solid rgba(100,54,20,.35);box-shadow:25px 35px 60px #24191099,inset -20px -16px 35px #5b321755}
+.hero-art .loaf-one{width:340px;height:225px;right:10%;top:37%;border-radius:50%;transform:rotate(-20deg)}
+.hero-art .loaf-two{width:245px;height:155px;right:-1%;top:57%;border-radius:50%;transform:rotate(25deg)}
+.hero .hero-inner{position:relative;z-index:2;min-height:610px;display:flex;align-items:center}
+.hero .content{padding:90px 0 95px;align-self:auto;max-width:710px}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;color:#e4c498}
+.hero h1{font-size:clamp(50px,6.5vw,88px);letter-spacing:-2px;line-height:1.03;margin:20px 0 24px}
+.hero h1 em{font-weight:400;color:#eac795}
+.hero p.lede{max-width:530px;font-size:clamp(16px,1.7vw,19px);line-height:1.7;color:#f2e5d4}
+.hero .actions .btn{padding:14px 22px}
+.badges .b .icon{color:var(--crust-dark)}
+.form-hint{font-size:12px;color:var(--soft);margin:0}
+@media(max-width:600px){
+header .container{height:68px}
+.logo .name{font-size:14px}.logo .name small{font-size:9px;letter-spacing:1px}
+header .btn{padding:10px 13px;font-size:12px}
+.hero,.hero .hero-inner{min-height:550px}
+.hero .content{padding:85px 0}
+.hero::after{background:linear-gradient(90deg,#21180ff0,#21180fba)}
+.hero-art .loaf-one{right:-15%;top:48%;opacity:.38}
+.hero-art .loaf-two{opacity:.25}
+.hero h1{font-size:clamp(47px,11vw,66px)}
+.hero .actions .btn{font-size:12px;padding:12px 15px}
+.store{grid-template-columns:1fr}
+.store .pic{width:56px;height:56px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo">
+      <span class="mark">BM</span>
+      <span class="name">Boulangerie Mousset<small>Artisan boulanger · Troyes</small></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">La maison</a></li>
+        <li><a href="#creations">Créations</a></li>
+        <li><a href="#boutiques">Nos boutiques</a></li>
+        <li><a href="#commande">Sur commande</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#commande" class="btn">Commander</a>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="loaf loaf-one"></div><div class="loaf loaf-two"></div></div>
+<div class="container hero-inner"><div class="content">
+<span class="hero-eyebrow">BOULANGERIE ARTISANALE À TROYES</span>
+<h1 id="hero-title">Le goût des<br><em>bonnes choses.</em></h1>
+<p class="lede">Pains de caractère, viennoiseries dorées et pâtisseries préparées avec passion, chaque jour près de chez vous.</p>
+<div class="actions"><a href="#creations" class="btn">Nos créations</a><a href="#boutiques" class="btn ghost">Nos boutiques</a></div>
+</div></div></section>
+
+<div class="badges"><div class="container"><div class="row">
+<div class="b"><div class="icon">✦</div><div class="t">Savoir-faire artisanal</div><div class="s">Le soin du geste</div></div>
+<div class="b"><div class="icon">♡</div><div class="t">À partager</div><div class="s">Pour toutes les occasions</div></div>
+<div class="b"><div class="icon">✳</div><div class="t">Douceurs gourmandes</div><div class="s">Du pain aux gâteaux</div></div>
+<div class="b"><div class="icon">⌖</div><div class="t">Quatre boutiques</div><div class="s">Dans le pays troyen</div></div>
+</div></div></div>
+</div>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="grid">
+      <img src="images/storefront.jpg" alt="Devanture de la boulangerie Mousset">
+      <div>
+        <span class="kicker">La maison</span>
+        <h2>Quatre adresses, une famille d'artisans.</h2>
+        <p style="color:var(--soft);font-size:17px;margin:0 0 10px">À Saint-André-les-Vergers, Troyes Chomedey, Barberey-Saint-Sulpice et Troyes 1er Mai, l'équipe Mousset pétrît, façonne et cuit chaque jour dans le respect du métier.</p>
+        <ul class="checklist">
+          <li>Pain traditionnel, baguettes, viennoiseries et pâtisseries fraîches</li>
+          <li>Pièces montées, entremets, fraisiers et créations sur commande</li>
+          <li>Maîtrise reconnue « Très satisfaisant » au contrôle sanitaire officiel</li>
+          <li>Une équipe à visage humain : Anne-Lise, Mathieu et toute l'équipe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creations" class="creations">
+  <div class="container">
+    <span class="kicker">Créations</span>
+    <h2>Du quotidien aux pièces sur mesure.</h2>
+    <p class="lede">Du pain croustillant aux entremets élégants, découvrez une sélection pour le quotidien et les grandes occasions.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="images/hero-baguettes.jpg" alt="Baguettes artisanales">
+        <div class="body"><h3>Le pain du jour</h3><p>Baguettes, pains de campagne, traditions et pains spéciaux, cuits tout au long de la journée.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/fraisier-tradition.jpg" alt="Fraisier traditionnel">
+        <div class="body"><h3>Le fraisier d'Anne-Lise</h3><p>Recette maison, fruits de saison et finitions sur commande, même pour les pièces uniques.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/entremet-miroir.jpg" alt="Entremet à glaçage miroir">
+        <div class="body"><h3>Quand Mathieu laisse parler sa créativité</h3><p>Entremets miroir, pièces signature pour mariages, anniversaires et événements.</p></div>
+      </div>
+      <div class="card">
+        <div class="ph">ESTAC</div>
+        <div class="body"><h3>Éclairs du dimanche</h3><p>Créations aux couleurs du club : pour les jours de match, Troyes fête ses victoires en gourmandise.</p></div>
+      </div>
+      <div class="card">
+        <div class="ph alt">Pièces<br>montées</div>
+        <div class="body"><h3>Pièces montées sur mesure</h3><p>Croquembouches, pyramides de choux et nougatine, façonnés pour vos anniversaires et mariages.</p></div>
+      </div>
+      <div class="card">
+        <div class="ph alt2">Viennoi-<br>series</div>
+        <div class="body"><h3>Viennoiseries & pâtisseries</h3><p>Croissants, pains au chocolat, brioches, tartes et gourmandises fraîches chaque matin dès 6h.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="boutiques" class="stores">
+  <div class="container">
+    <span class="kicker">Nos boutiques</span>
+    <h2>Quatre boutiques près de chez vous.</h2>
+    <p class="lede">Retrouvez nos adresses et préparez votre visite. Pensez à confirmer les horaires auprès de la boutique.</p>
+    <div class="grid">
+      <div class="store">
+        <div class="pic">B</div>
+        <div>
+          <h3>Saint-André-les-Vergers</h3>
+          <div class="meta">12 Route d'Auxerre, 10120 Saint-André-les-Vergers<br><strong>Horaires</strong>Lundi fermé · Mar–Sam 06:00–19:30 · Dim 06:00–13:00</div>
+          <div class="links"><a href="tel:+33325823518">📞 03 25 82 35 18</a><a href="https://www.google.com/maps/dir/?api=1&destination=12+Route+d%27Auxerre+10120+Saint-Andr%C3%A9-les-Vergers">📍 Itinéraire</a></div>
+        </div>
+      </div>
+      <div class="store">
+        <div class="pic">C</div>
+        <div>
+          <h3>Troyes · Chomedey</h3>
+          <div class="meta">88 Avenue Chomedey de Maisonneuve, 10000 Troyes<br><strong>Horaires</strong>Lundi–Sam 06:00–19:30 · Dim 06:00–13:00</div>
+          <div class="links"><a href="#contact">📞 Nous contacter</a><a href="https://www.google.com/maps/dir/?api=1&destination=88+Avenue+Chomedey+de+Maisonneuve+10000+Troyes">📍 Itinéraire</a></div>
+        </div>
+      </div>
+      <div class="store">
+        <div class="pic">S</div>
+        <div>
+          <h3>Barberey-Saint-Sulpice</h3>
+          <div class="meta">Centre commercial, Barberey-Saint-Sulpice<br><strong>Horaires</strong>Lundi–Sam 06:30–19:30 · Dim 06:30–13:00</div>
+          <div class="links"><a href="#contact">📞 Nous contacter</a><a href="https://www.google.com/maps/dir/?api=1&destination=Barberey-Saint-Sulpice">📍 Itinéraire</a></div>
+        </div>
+      </div>
+      <div class="store">
+        <div class="pic">1</div>
+        <div>
+          <h3>Troyes · 1er Mai</h3>
+          <div class="meta">Rue du 1er Mai, 10000 Troyes<br><strong>Horaires</strong>Lundi–Sam 06:30–19:30 · Dim 06:30–13:00</div>
+          <div class="links"><a href="#contact">📞 Nous contacter</a><a href="https://www.google.com/maps/dir/?api=1&destination=Rue+du+1er+Mai+10000+Troyes">📍 Itinéraire</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="commande" class="order">
+  <div class="container">
+    <div class="grid">
+      <div class="side">
+        <span class="kicker">Sur commande</span>
+        <h2>Anticipez votre prochain événement.</h2>
+        <span class="pill">Renseignements sur les commandes</span>
+        <p>Mariages, anniversaires, baptêmes, commandes d'entreprise : précisez votre besoin, Mathieu ou Anne-Lise reviennent vers vous avec un devis et une proposition personnalisés.</p>
+        <p style="margin-top:18px;color:var(--ink);font-weight:600">Quelques jours de délai recommandés pour les pièces montées.</p>
+      </div>
+      <form id="order-form">
+        <label>Votre nom<input type="text" name="nom" placeholder="Marie Dupont" required></label>
+        <div class="row2">
+          <label>Téléphone<input type="tel" name="tel" placeholder="06 12 34 56 78" required></label>
+          <label>Email<input type="email" name="email" placeholder="marie@email.fr"></label>
+        </div>
+        <label>Type de création
+          <select name="type" required>
+            <option>Fraisier</option>
+            <option>Pièce montée / croquembouche</option>
+            <option>Entremet personnalisé</option>
+            <option>Wedding cake</option>
+            <option>Commande entreprise / traiteur</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <div class="row2">
+          <label>Date souhaitée<input type="date" name="date"></label>
+          <label>Nombre de personnes<input type="number" name="pers" min="1" value="20"></label>
+        </div>
+        <label>Votre idée
+          <textarea name="msg" rows="4" placeholder="Thème, couleurs, allergies, message à inscrire…"></textarea>
+        </label>
+        <button type="submit">Préparer mon email</button><p class="form-hint">Le bouton ouvre votre messagerie avec un email prérempli. Aucun message n’est envoyé automatiquement.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <span class="kicker" style="color:var(--gold)">Contact</span>
+    <h2>On vous répond vite, et on vous reconnaît.</h2>
+    <p class="lede">Une question ou un projet gourmand ? Contactez la boulangerie pour en discuter.</p>
+    <div class="grid">
+      <div class="c"><h3>Téléphone · Saint-André</h3><p>03 25 82 35 18</p></div>
+      <div class="c"><h3>WhatsApp</h3><p>06 32 18 46 24</p></div>
+      <div class="c"><h3>Email</h3><p>boulangerie-mousset@orange.fr</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © Boulangerie Mousset · Saint-André-les-Vergers · Troyes · Barberey · <span style="opacity:.6">Maquette préparée par Meric Koken · nexus-hubs.web.app</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('order-form').addEventListener('submit', function(event) {
+event.preventDefault();
+const d=new FormData(this);
+const lines=['Bonjour, je souhaite me renseigner pour une commande.','','Nom : '+d.get('nom'),'Téléphone : '+d.get('tel'),'Email : '+d.get('email'),'Création : '+d.get('type'),'Date : '+d.get('date'),'Personnes : '+d.get('pers'),'Détails : '+d.get('msg')];
+location.href='mailto:boulangerie-mousset@orange.fr?subject='+encodeURIComponent('Demande de commande')+'&body='+encodeURIComponent(lines.join(String.fromCharCode(10)));
+});
+</script></body>
+</html>
